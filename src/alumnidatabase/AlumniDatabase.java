@@ -20,10 +20,11 @@ public class AlumniDatabase {
         boolean run = true;
         MemberList memberList = new MemberList();
 
+        System.out.println("--- Welcome to the Alumni Database ---");
+
         while(run){
             printMenu();
             int choice = in.nextInt();
-
             switch (choice) {
                 
                 case 1: memberList.printMemberList(); break;
@@ -47,7 +48,6 @@ public class AlumniDatabase {
     
         
     public static void printMenu(){
-       System.out.println("--- Welcome to the Alumni Database ---");
        System.out.println("What would you like to do? ");
        System.out.println("1. Display Member Report");
        System.out.println("2. Add New Members");

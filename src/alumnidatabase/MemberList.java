@@ -16,37 +16,40 @@ public class MemberList {
 
     public void addMember() {
 
-        System.out.print("Name: ");
+        //clear buffer
+        in.nextLine();
+
+        System.out.println("Name: ");
         String name = in.nextLine();
 
-        System.out.print("Company: ");
+        System.out.println("Company: ");
         String company = in.nextLine();
 
-        System.out.print("Job Title: ");
+        System.out.println("Job Title: ");
         String jobTitle = in.nextLine();
 
-        System.out.print("Email: ");
+        System.out.println("Email: ");
         String email = in.nextLine();
 
-        System.out.print("Business Phone: ");
+        System.out.println("Business Phone: ");
         String businessPhone = in.nextLine();
 
         System.out.println("Address: ");
         String address = in.nextLine();
 
-        System.out.print("Graduating Major: ");
+        System.out.println("Graduating Major: ");
         String gradMajor = in.nextLine();
 
-        System.out.print("Graduating Year: ");
+        System.out.println("Graduating Year: ");
         int gradYear = in.nextInt();
 
-        System.out.print("Active Club Member: ");
+        System.out.println("Active Club Member: ");
         boolean isActive = in.nextBoolean();
 
-        System.out.print("Is Club Employee: ");
+        System.out.println("Is Club Employee: ");
         boolean isEmployee = in.nextBoolean();
 
-        System.out.print("Paid Membership Fees: ");
+        System.out.println("Paid Membership Fees: ");
         boolean hasPaidFees = in.nextBoolean();
 
 
@@ -56,7 +59,9 @@ public class MemberList {
     }
 
     public void formatContact(int i) {
-
+        int position = i + 1;
+        System.out.println("------------------------------");
+        System.out.println("--- Position in List: " + position + " ---");
         System.out.println("Name: " + memberList.get(i).getName());
         System.out.println("Company: " + memberList.get(i).getCompany());
         System.out.println("Job Title: " + memberList.get(i).getJobTitle());
@@ -72,8 +77,6 @@ public class MemberList {
 
     public void printMemberList() {
         for (int i = 0; i < memberList.size(); i++ ) {
-            int position = i + 1;
-            System.out.println("Position in List:" + position );
             formatContact(i);
             System.out.println("------------------------------");
         }
