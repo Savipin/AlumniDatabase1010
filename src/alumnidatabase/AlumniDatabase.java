@@ -38,7 +38,9 @@ public class AlumniDatabase {
                 } break;
                 // modify
                 case 4: {
-
+                    System.out.println("Which member would you like to modify?");
+                    memberList.printMemberList();
+                    memberList.modifyMember();
                 } break;
                 case 5: run = false;
 

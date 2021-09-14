@@ -3,6 +3,7 @@ package alumnidatabase;
 
 import alumnidatabase.Contact;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class MemberList {
@@ -69,7 +70,7 @@ public class MemberList {
         System.out.println("Address: " + memberList.get(i).getAddress());
         System.out.println("Graduate Major: " + memberList.get(i).getGradMajor());
         System.out.println("Graduation Year: " + memberList.get(i).getGradYear());
-        System.out.println("Is Active Member? " + memberList.get(i).getIsActive());
+        //System.out.println("Is Active Member? " + memberList.get(i).getIsActive());
         System.out.println("Is Club Employee? " + memberList.get(i).getIsIsEmployee());
         System.out.println("Paid Membership Fees? " + memberList.get(i).getIsHasPaidFees());
     }
@@ -83,14 +84,71 @@ public class MemberList {
 
 
     public void deactivateMember(){
-        int toRemove = in.nextInt() - 1 ;
+        int toRemove = in.nextInt() - 1;
         System.out.println("--Change boolean--");
         boolean flip = in.nextBoolean();
         memberList.get(toRemove).setActive(flip);
 
     }
-    public void modifyMember(int i) {
-        // memberList.set(i, );
+    public void modifyMember() {
+        int toModify = in.nextInt() - 1;
+        in.nextLine();
+        System.out.println("What field would you like to modify?");
+        String field = in.nextLine().toLowerCase();
+
+        switch (field) {
+            case "name" : {
+                System.out.println("Enter New Name:");
+                String newName = in.nextLine();
+                memberList.get(toModify).setName(newName);
+
+            } break;
+            case "company" : {
+                System.out.println("Enter New Compnay:");
+                String newCompany = in.nextLine();
+                memberList.get(toModify).setCompany(newCompany);
+            } break;
+            case "jobtitle" : {
+                System.out.println("Enter New Job Title:");
+                String newJob = in.nextLine();
+                memberList.get(toModify).setJobTitle(newJob);
+            } break;
+            case "email" : {
+                System.out.println("Enter New Email:");
+                String newEmail = in.nextLine();
+                memberList.get(toModify).setEmail(newEmail);
+            } break;
+            case "businessphone" : {
+                System.out.println("Enter New Business Phone Number:");
+                String newBusinessPhone = in.nextLine();
+                memberList.get(toModify).setBusinessPhone(newBusinessPhone);
+            } break;
+            case "address" : {
+                System.out.println("Enter New Address:");
+                String newAddress = in.nextLine();
+                memberList.get(toModify).setAddress(newAddress);
+            } break;
+            case "graduatemajor" : {
+                System.out.println("Enter New Major:");
+                String newMajor = in.nextLine();
+                memberList.get(toModify).setGradMajor(newMajor);
+            } break;
+            case "graduationyear" : {
+                System.out.println("Enter New Year:");
+                int newYear = in.nextInt();
+                memberList.get(toModify).setGradYear(newYear);
+            } break;
+            case "clubemployee" : {
+                System.out.println("Set employment boolean:");
+                boolean newStatus = in.nextBoolean();
+                memberList.get(toModify).setIsEmployee(newStatus);
+            } break;
+            case "haspaidfees" : {
+                System.out.println("Set Fee Payment boolean");
+                boolean payment = in.nextBoolean();
+                memberList.get(toModify).setHasPaidFees(payment);
+            }
+        }
     }
 
 
