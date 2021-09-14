@@ -32,7 +32,9 @@ public class AlumniDatabase {
 
                 // need to display all of the contacts (with where they are in the list) and ask which peroson to change the setting on)
                 case 3: {
-
+                    System.out.println("Which member would you like to deactivate?");
+                    memberList.printMemberList();
+                    memberList.deactivateMember();
                 } break;
                 // modify
                 case 4: {

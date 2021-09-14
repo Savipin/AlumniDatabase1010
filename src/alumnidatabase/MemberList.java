@@ -11,7 +11,6 @@ public class MemberList {
     ArrayList<Contact> memberList = new ArrayList<>();
 
     public MemberList() {
-        System.out.println("New Member");
     }
 
     public void addMember() {
@@ -84,6 +83,10 @@ public class MemberList {
 
 
     public void deactivateMember(){
+        int toRemove = in.nextInt() - 1 ;
+        System.out.println("--Change boolean--");
+        boolean flip = in.nextBoolean();
+        memberList.get(toRemove).setActive(flip);
 
     }
     public void modifyMember(int i) {
