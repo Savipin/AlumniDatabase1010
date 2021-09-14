@@ -21,7 +21,7 @@ public class AlumniDatabase {
         MemberList memberList = new MemberList();
 
         System.out.println("--- Welcome to the Alumni Database ---");
-
+// todo figure out emptying the scanner
         while(run){
             printMenu();
             int choice = in.nextInt();
